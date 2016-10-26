@@ -32,8 +32,13 @@ and then login using:
 
 alternatively, you can create a bash alias in your **.bashrc** file
 
-`echo "alias dockerlogin=docker-login-func" >> .bashrc`
-`echo "docker-login-func() {docker exec -it $1 python -c \"import pty; pty.spawn('/bin/login')\"}" >> .bashrc`
+`echo "alias dockerlogin=docker-login-func" >> ~/.bashrc`
+
+`echo "docker-login-func() {" >> ~/.bashrc`
+
+`echo "  docker exec -it \$1 python -c \"import pty; pty.spawn('/bin/login')\"" ~/.bashrc`
+
+`echo "}" >> ~/.bashrc`
 
 to directly login into any docker machine using:
 
