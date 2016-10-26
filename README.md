@@ -25,6 +25,7 @@ This image includes the default `ubuntu:xenial` packages, plus:
 * make
 * r-base
 * wget
+* ssh
 
 and their dependencies.
 
@@ -50,10 +51,10 @@ Alternatively to `docker exec`, you can create a bash alias in your **.bashrc** 
 
 `echo "docker-login-func() {" >> ~/.bashrc`
 
-`echo "  docker exec -it \$1 python -c \"import pty; pty.spawn('/bin/login')\"" >> ~/.bashrc`
+`echo "  docker exec -it \$2 ssh -t \$1@localhost" >> ~/.bashrc`
 
 `echo "}" >> ~/.bashrc`
 
 to directly login into any docker machine using:
 
-`dockerlogin <cont name>`
+`dockerlogin <user name> <cont name>`
