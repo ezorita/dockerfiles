@@ -41,7 +41,7 @@ then Ctrl+D to exit the interactive session. Start the container with:
 
 and then login using:
 
-`docker exec -it <cont name> python -c "import pty; pty.spawn(('/bin/login',))"`
+`docker exec -it <cont name> ssh -t <user>@localhost`
 
 ### Login bash alias
 
