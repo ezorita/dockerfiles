@@ -29,3 +29,12 @@ then Ctrl+D to exit the interactive session. Start the container with:
 and then login using:
 
 `docker exec -it <cont name> python -c "import pty; pty.spawn(('/bin/login',))"`
+
+alternatively, you can create a bash alias in your **.bashrc** file
+
+`echo "alias dockerlogin=docker-login-func" >> .bashrc`
+`echo "docker-login-func() {docker exec -it $1 python -c \"import pty; pty.spawn('/bin/login')\"}" >> .bashrc`
+
+to directly login into any docker machine using:
+
+`dockerlogin <cont name>`
